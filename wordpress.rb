@@ -12,4 +12,17 @@ execute 'wordpress_extract' do
 end
 execute 'wordpress_extract' do
   command 'cp -r /tmp/wordpress/* /var/www/html/'
+  command '/bin/mv /var/www/html/wp-config-sample.php /var/www/html/wp-config.php'
 end 
+execute 'wordpress_extract' do
+  command '/bin/mv /var/www/html/wp-config-sample.php /var/www/html/wp-config.php'
+end
+execute 'wordpress_extract' do
+  command '/bin/sed -i "s/database_name_here/wordpress/g" /var/www/html/wp-config.php'
+end
+execute 'wordpress_extract' do
+  command '/bin/sed -i "s/username_here/root/g" /var/www/html/wp-config.php'
+end
+execute 'wordpress_extract' do
+  command '/bin/sed -i "s/password_here/root123/g" /var/www/html/wp-config.php'
+end
