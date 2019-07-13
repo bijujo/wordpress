@@ -12,7 +12,6 @@ execute 'wordpress_extract' do
 end
 execute 'wordpress_extract' do
   command 'cp -r /tmp/wordpress/* /var/www/html/'
-  command '/bin/mv /var/www/html/wp-config-sample.php /var/www/html/wp-config.php'
 end 
 execute 'wordpress_extract' do
   command '/bin/mv /var/www/html/wp-config-sample.php /var/www/html/wp-config.php'
